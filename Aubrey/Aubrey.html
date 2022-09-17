@@ -16,6 +16,12 @@
             width: 100%; 
             background-color: rgb(103, 93, 148);
         }
+        .footer2{
+            position:fixed;
+            left: -7px;
+            bottom: 21px;
+            font-size: smaller;
+        }
         header{
             position:fixed;
             left: 0px;
@@ -33,12 +39,39 @@
             display: flex;
             justify-content: space-between;
         }
+        .overlay{
+            top: 0px;
+            position: relative;
+            z-index: 999;
+            animation: disappear 0s linear 3s forwards;
+            position:relative;
+
+            margin: 0 auto;
+            padding: 10px 16px;
+            border-top-left-radius: 10px 10px; 
+            -moz-border-top-left-radius: 10px 10px;
+            border-top-right-radius: 10px 10px; 
+            -moz-border-top-right-radius: 10px 10px;
+        }
+
+        @keyframes disappear {
+            to {opacity:0;}
+        }
         </style>
+        <script>
+            function headbutt(){
+                document.getElementById("headbutt").style = "display: unset;"
+                document.getElementById("headbutt2").style = "display: unset;"
+                document.getElementById("botao").style = "display: none;"
+            }
+        </script>
 </head>
 <body onload="init()">
 
     <header class="mesmalinha">
-        <span class="mesmalinha">owo</span>
+        <span class="mesmalinha">
+            <img src="Omori.png" height="70" width="170">
+        </span>
         <span class="mesmalinha"></span>
     </header>
     <h2>.</h2>
@@ -55,7 +88,7 @@
         </div>
     </div>
     <div style="text-align: center;">
-    <h2>Aubrey Emotions</h2>
+        <h2>Aubrey Emotions</h2>
     </div>
     <div style="text-align: center; white-space: nowrap;">
         <div style="display: inline;">
@@ -83,13 +116,20 @@
             <img src="AUBREY_AFRAID.gif" height="90" width="90" style="border-radius:30%; border: 5px; border-style: solid;">
         </div>
     </div>
-<div style="text-align: center; white-space: nowrap;">
-    <button style="width: 120px; height: 20px;">Aubrey</button>
-    <h3>We all love Aubrey from Omori</h3>
-    <img src="Omori.png" height="90" width="90">
-</div>
-    <footer>Project D. e. l. l. a.</footer>
+    <div style="text-align: center; white-space: nowrap;">
+        <br>
+        <button id="botao" style="width: 100px; height: 30 px;" onclick="headbutt()">Be Happy</button>
+        <div style="display: inline;">
+            <img id="headbutt" src="AUBREY_VICTORY.gif" height="90" width="90" style="display: none; border-radius:30%; border: 5px; border-style: solid;">
+            <br>
+            <h5 id="headbutt2" style="display: none;">You're happy now!</h5>
+        </div>
+    </div>
+    <br>
+    <h2></h2>
+    <img class="footer2" src="AUBREY_ANDANDO_CANTINHO.gif" width="64" height="72">
 
+    <footer>Project D. e. l. l. a.</footer>
 </body>
 </html>
 
